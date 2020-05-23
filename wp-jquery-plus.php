@@ -23,8 +23,8 @@ function wpjp_set_src() {
 		wp_enqueue_script('jquery');
 
 		// Get current version of jQuery from WordPress core
-		$wp_jquery_ver = $GLOBALS['wp_scripts']->registered['jquery-core']->ver;
-		$wp_jquery_migrate_ver = $GLOBALS['wp_scripts']->registered['jquery-migrate']->ver;
+		$wp_jquery_ver = str_ireplace( '-wp', '', $GLOBALS['wp_scripts']->registered['jquery-core']->ver );
+		$wp_jquery_migrate_ver = str_ireplace( '-wp', '', $GLOBALS['wp_scripts']->registered['jquery-migrate']->ver );
 
 		// Set jQuery Google URL
 		if ( defined('WPJP_USE_CDNJS') )
